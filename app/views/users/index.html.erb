@@ -1,0 +1,30 @@
+
+<h1>Enquiry List</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Contact</th>
+    <th>Description</th>
+  </tr>
+ 
+<% @enquiry.each do |en| %>
+  <tr>
+    <td><%= en.name %></td>
+    <td><%= en.mail_id %></td>
+    <td><%= en.contact_no %></td>
+    <td><%= en.description %></td>
+  </tr>
+<% end %>
+</table>
+<%=link_to "Contact Us", user_enquiry_path(@user)%>
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>

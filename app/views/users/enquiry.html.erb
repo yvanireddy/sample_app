@@ -1,0 +1,10 @@
+
+<%= form_for Enquiry.new , url: user_create_enquiry_path do |f| %>
+  	<%=f.text_field :name,placeholder:"Name"%> <br>
+  	<%=f.text_field :mail_id,placeholder:"Email"%> <br>
+  	<%=f.text_field :contact_no,placeholder:"Contact"%> <br>
+    <%=f.text_area :description%> <br>
+ 
+    <%=link_to "Back",:back,class: "btn btn-primary"%>
+    <%=f.submit "Save", class: "btn btn-primary"%>
+<%end%>
